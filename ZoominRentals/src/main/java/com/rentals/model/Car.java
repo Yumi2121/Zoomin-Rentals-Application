@@ -12,10 +12,18 @@ public class Car {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@Column(name = "year")
+	private int year;
 	@Column(name = "brand")
 	private String brand;
 	@Column(name = "model")
 	private String model;
+	@Column(name = "seats")
+	private int seats;
+	@Column(name = "transmission")
+	private String transmission;
+	@Column(name = "fuel")
+	private String fuel;
 	@Column(name = "rego")
 	private String name;
 	@Column(name = "isAvailable")
