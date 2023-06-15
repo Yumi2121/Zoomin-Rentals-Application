@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+
+     <!-- jquery -->
+     <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+
+
+  
+    <!-- Bootstrap -->  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="./bootstrap-5.1.0-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- CSS Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- jax  -->
+    <script src="myfunctions.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+    
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Student Registration</title>
+</head>
+
+    <body id="home-page">	
+
+        <!-- Nav bar -->
+
+        <div class="container" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Student Registration Service</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="index.html#getstudents" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Existing Student
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+                    <a class="dropdown-item" href="index.html#studentTable">Display student list</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Edit student</a>
+                    <a class="dropdown-item">Delete student</a>
+               
+                  </div>
+                </li>
+              </ul>
+            
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="../pages/login/login.html" class="btn btn-primary" role="button" aria-disabled="true">Login /Sign up</a>
+                <button class="btn btn-primary" type="button">Button</button>
+              </div>
+
+            </div>
+        </nav>   
+        </div>
+
+    </body>
+
+</html> 
