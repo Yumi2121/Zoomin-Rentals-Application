@@ -5,12 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@Size(min=3,message="Name must have atleast 3 chars")
+	@NotBlank(message = "Name is mandatory")
 	@Column(name = "name")
 	private String name;
 	@Column(name = "mobile")
@@ -19,6 +23,8 @@ public class Customer {
 	private int licenseno; 
 	@Column(name = "email")
 	private String email;
+	@Size(min=8,message="Password must contain atleast 8 characters")
+	@NotBlank(message = "Name is mandatory")
 	@Column(name = "password")
 	private String password;
 	
