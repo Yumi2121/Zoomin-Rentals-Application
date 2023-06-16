@@ -53,4 +53,29 @@ function validateSignupForm() {
 		alert("Successfully signed up");
 		return true;
 	}
+
 }
+
+$(document).ready(function () {
+	$("input#signup").click(function () {
+  var id = localStorage.getItem("selectedId");
+  var customer = {
+	name: $("#name").val(),
+	mobile: $("#mobile").val(),
+	licenseno: $("#licence").val(),
+	email: $("#email").val(),
+	password: $("#signConfirmPassword").val(),
+  };
+
+  $.ajax({
+	url: "http://localhost:9999/customers/",
+	type: "POST",
+	dataType: "json",
+	contentType: "application/json",
+	success: function (data) {
+	  alert("Customer Successfully Registered!");
+	},
+	data: JSON.stringify(customer),
+  });
+});
+});
