@@ -53,6 +53,7 @@ function validateSignupForm() {
 		alert("Successfully signed up");
 		return true;
 	}
+
 }
 
 $(document).ready(function () {
