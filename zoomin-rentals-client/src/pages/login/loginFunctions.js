@@ -78,3 +78,24 @@ $(document).ready(function () {
   });
 });
 });
+
+$(document).ready(function () {
+	$("input#loginbtn").on("click", function () {
+		var email = $("#logName").val();
+		var pass = $("#logPassword").val();
+		
+	  $.ajax({
+		url: "http://localhost:9999/customers/email/" + email +"/"+ pass,
+		type: "GET",
+		dataType: "json",
+		contentType: "application/json",
+		success: function (data) {
+		  alert("Login Successful");
+
+		},
+		error: function () {
+		  alert("FAILURE!");
+		},
+	  });
+	});
+  });
