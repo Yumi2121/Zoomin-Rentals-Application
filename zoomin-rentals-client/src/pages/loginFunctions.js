@@ -92,7 +92,8 @@ $(document).ready(function () {
 		contentType: "application/json",
 		success: function (data) {
 		  alert("Login Successful");
-
+		  localStorage.setItem("loggedin", data.id);
+		  location.href = "home.html";
 		},
 		error: function () {
 		  alert("FAILURE!");
