@@ -56,4 +56,10 @@ public class CustomerServiceImp implements CustomerService {
 		return dao.findByName(name);
 	}
 
+	@Override
+	public Customer findByEmail(String email) {
+		System.out.println("Inside of CustomerServiceImp: ===============================");
+		return dao.findByEmail(email);
+	}
+
 }

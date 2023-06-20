@@ -17,4 +17,6 @@ public interface CustomerDao {
 	public Customer deleteById(int id);
 	
 	public List<Customer> findByName(String name);
+	
+	public Customer findByEmail(String email);
 }

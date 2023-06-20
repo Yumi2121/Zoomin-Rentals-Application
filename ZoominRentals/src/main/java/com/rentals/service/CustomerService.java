@@ -10,4 +10,5 @@ public interface CustomerService {
 	public Customer retriveOne(int id);
 	public void deleteOneCustomer(int id);
 	public List<Customer> findByName(String name);
+	public Customer findByEmail(String email);
 }

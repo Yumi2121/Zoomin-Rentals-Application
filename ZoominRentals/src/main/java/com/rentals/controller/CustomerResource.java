@@ -66,4 +66,18 @@ public class CustomerResource {
 		
 		return customers;
 	}
+	
+	@GetMapping(path = "/customers/email/{email}/{pass}")
+	public Customer retrieveCustomerByEmail(@PathVariable String email, @PathVariable String pass) {
+		System.out.println("Inside retrieveCustomerByEmail of CustomerService");
+		Customer c = service.findByEmail(email);
+		System.out.println(email + " " + pass);
+		System.out.println(c);
+		if (c.getPassword().equals(pass)) {
+			System.out.println("login successful");
+			return c;
+		}
+		
+		return null;
+	}
 }
