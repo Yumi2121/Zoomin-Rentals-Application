@@ -67,7 +67,7 @@
               </ul>
             
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="../pages/login/login.html" class="btn btn-primary" role="button" id="logbtn" aria-disabled="true">Login /Sign up</a>
+                <a href="../pages/login.html" class="btn btn-primary" role="button" id="logbtn" aria-disabled="true">Login /Sign up</a>
                 <a href="user_prfile.html" class="btn btn-primary" role="button" id="profilebtn" aria-disabled="true">user</a>
               </div>
 
@@ -104,17 +104,18 @@
                               <input id="date" name="date" type="date" min="2010-08-14" max="2014-08-14" value="" class="form-control search-slt" placeholder="Return Date">
                           </div>
                           <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <label for="returnDate" class="form-label">Car type</label>
-                              <select class="form-control search-slt" aria-label="Default select example">
-                                  <option>Display All</option>
-                                  <option>Cars</option>
-                                  <option>Electric cars</option>
-                                  <option>Cargo Vans</option>
-  
+                            <label for="returnDate" class="form-label">Seats</label>
+                              <select class="form-control search-slt" id="seatoptions" aria-label="Default select example">
+                                  <option>Any</option>
+                                  <option>2</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>7</option>
+                                  <option>8</option>
                               </select>
                           </div>
                           <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                              <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                              <button type="button" id="searchbtn" class="btn btn-danger wrn-btn">Search</button>
                           </div>
                       </div>
                   </div>
