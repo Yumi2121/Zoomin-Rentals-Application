@@ -26,7 +26,7 @@
     <link href="home-style.css" rel="stylesheet">
 
     <!-- jax  -->
-    <script src="myfunctions.js"></script>
+    <script src="searchfunctions.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  
@@ -89,15 +89,28 @@
       </div>
 
       <!-- search result display section -->
-      <div class="col-md-4"></div>
-    
-        <div class="col-md-4">
-         <div class="container">
-        <button id="getCars">get all cars</button>
-            
-            <h2>All cars</h2>
+      <div class="col-md-2"></div>
+        <div class="col-md-8">
+         <div class="container">   
+            <h2>Search Results</h2>
             <div id="allCars"></div>
-          
+            <table class='table' id="cartable">
+              <thead>
+              <tr>
+              <th scope='col'>Year</th>
+              <th scope='col'>Brand</th>
+              <th scope='col'>Model</th>
+              <th scope='col'>Seats</th>
+              <th scope='col'>Transmission</th>
+              <th scope='col'>Fuel</th>
+              <th scope='col'></th>
+              </tr>
+              </thead>
+              <tbody id="tbody">
+                
+              </tbody>
+            </table>
+            <button name="back" class="btn btn-primary" onclick="history.back()">Back</button>
     </div>
     </div>
     
