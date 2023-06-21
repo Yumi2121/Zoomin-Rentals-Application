@@ -22,14 +22,14 @@ h1 {
 
 /* header styling  */
 #header-section {
-  margin:0;
+  margin-bottom: 50px;
   padding: 0;
   height: 700px;
   background-image: url("../images/redcar.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  position: relative;
   
 }
 
@@ -48,15 +48,29 @@ header #header-img {
 /*search bar css start here*/
 #search {
   width: 80%;
-  height: 100px;
-  background-color: #fff;
+  height: 126px;
+  margin-top: 460px;
+  border-top-width: 0px;
+  border-left-width: 3px;
+  padding-left: 40px;
+  padding-top: 20px;
+  background: white;
   border-style: solid;
+  z-index: 10;
+  border: #fff;
+  box-shadow: 
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  
   
 }
 
-.search-sec{
-  padding: 2rem;
-}
+
 /* #search-slt{
   display: block;
   width: 100%;
@@ -78,18 +92,54 @@ header #header-img {
   height: calc(3rem + 2px) !important;
   border-radius:25%;
 }
+
+
+/* 
 @media (min-width: 992px){
-  .search-sec{
+  #search{
       position: relative;
       top: -114px;
       background: rgba(26, 70, 104, 0.51);
   }
+} */
+
+
+
+
+/*  introduction-section styling  */
+#introduction-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 120px;
+  margin-left: 30px;
+  text-align: center;
+ 
 }
 
-@media (max-width: 992px){
-  .search-sec{
-      background: #1A4668;
-  }
+.icons {
+  padding: 15px 15px 15px;
+  margin: 60px 20px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#location, #calendar, #car {
+  width: 100px;
+  background-color: #FCCF47;
+  padding: 15px 15px 15px;
+  margin: 15px 15px 15px;
+  margin-left: 55px;
+}
+
+.cards-introduction {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 
@@ -98,6 +148,7 @@ header #header-img {
 
 #footer-section {
   background-color:darkgrey;
+  text-align: center;
 }
 
 .contact {
@@ -126,6 +177,24 @@ header #header-img {
   color: black;
   font-size: 1.5rem;
   padding: 50px 0;
-  margin-left: 600px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 990px) {
+  #introduction-section {
+    margin-top: 500px;
+
+  }
+
+  #search{
+    display: block;
+      background: #9CA3AF;
+      height: 400px;
+      width: 80%;
+      padding-right: 30px;
+  }
+
+
+
 }
 
