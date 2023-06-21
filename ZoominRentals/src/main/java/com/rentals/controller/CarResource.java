@@ -68,5 +68,15 @@ public class CarResource {
 		return cars;
 	}
 	
+	@GetMapping(path = "/cars/seats/{seats}")
+	public List<Car> fetchCarBySeats(@PathVariable int seats) {
+		System.out.println("Inside fetchCarBySeats() of CarService");
+		List<Car> cars = service.findBySeats(seats);
+		if(cars == null) {
+			//throw new StudentNotFoundException("user with id: " + id + " not found");
+		}
+		return cars;
+	}
+	
 
 }

@@ -17,4 +17,6 @@ public interface CarDao {
 	public Car deleteById(int id);
 	
 	public List<Car> findByName(String name);
+	
+	public List<Car> findBySeats(int seats);
 }

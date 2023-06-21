@@ -55,4 +55,10 @@ public class CarServiceImp implements CarService {
 		return dao.findByName(rego);
 	}
 
+	@Override
+	public List<Car> findBySeats(int seats) {
+		System.out.println("inside of CarServiceImp: findBySeats()");
+		return dao.findBySeats(seats);
+	}
+
 }

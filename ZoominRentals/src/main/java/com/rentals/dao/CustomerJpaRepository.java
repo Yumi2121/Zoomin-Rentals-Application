@@ -10,4 +10,5 @@ import com.rentals.model.Customer;
 public interface CustomerJpaRepository extends CustomerDao, JpaRepository<Customer, Integer> {
 	@Query(value = "SELECT * FROM customer WHERE email = ?1", nativeQuery = true)
 	public Customer findByEmail(String email);
+
 }
