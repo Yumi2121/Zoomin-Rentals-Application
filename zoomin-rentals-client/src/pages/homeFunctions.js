@@ -23,6 +23,11 @@ $(document).ready(function () {
   $(document).ready(function () {
 	$("#searchbtn").on("click", function () {
 	  var selected = $('#seatoptions').find(":selected").text();
+	  var pickupDate = $("#pickupDate").val();
+	  var returnDate = $("#returnDate").val();
+
+	  localStorage.setItem("pdate", pickupDate);
+	  localStorage.setItem("rdate", returnDate);
 
 	  localStorage.setItem("seatcount", selected);
 	  location.href = "searchResult.html";
