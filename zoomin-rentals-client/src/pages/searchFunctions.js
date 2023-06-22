@@ -99,8 +99,8 @@ $(document).ready(function () {
 });
 
  $(document).ready(function () {
-	$("#selectedcar").on("click", "#cartable", function () {
+	$("#cartable").on("click", "#selectedcar", function () {
         var id = this.value;
-        alert(id);
+        alert("ID: " + id);
 	});
   });
