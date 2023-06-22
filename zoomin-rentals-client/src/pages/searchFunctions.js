@@ -2,6 +2,10 @@ $(document).ready(function () {
   var seats = localStorage.getItem("seatcount");
   var pdate = localStorage.getItem("pdate");
   var rdate = localStorage.getItem("rdate");
+
+  console.log(localStorage.getItem("pdate"));
+	console.log(localStorage.getItem("rdate"));
+
   var unavailable = [];
   if (seats == "Any") {
     $.ajax({
@@ -96,11 +100,35 @@ $(document).ready(function () {
       },
     });
   }
+
+  var myModal = document.getElementById('myModal')
+  var myInput = document.getElementById('myInput')
+  
+  
+  myModal.addEventListener('shown.bs.modal', function () {
+    myInput.focus();
+
+    var id = 
+    var pickupDate = localStorage.getItem("pdate");
+    var returnDate = localStorage.getItem("rdate");
+
+    $.ajax({
+      type: 'GET',
+      url: "http://localhost:9999/cars/" + id,
+
+    })
+
+
+
+
+
+  })
+
+
 });
 
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
+
+
+
+

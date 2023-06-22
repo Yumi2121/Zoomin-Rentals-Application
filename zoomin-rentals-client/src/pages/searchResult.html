@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Bootstrap CSS -->
  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -43,6 +43,13 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css">
 
+       <!-- Date Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
     <title>Zoomie CAr Rental-search result</title>
 </head>
 
@@ -65,8 +72,7 @@
                 <a class="nav-link" href="#">Features</a>
               </li>
             </ul>
-          
-            <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
+              
             <span class="navbar-text">
               <a href="../pages/login.html" class="btn btn-secondary btn-sm" role="button"  aria-disabled="true">Login /Sign up</a>
               <a href="user_prfile.html" class="btn btn-secondary btn-sm" role="button"  aria-disabled="true">user</a>
@@ -123,8 +129,9 @@
 
     <!-- press the rent button  -->
     <!-- Button trigger modal -->
+    <div class="container">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Launch static backdrop modal
+      Rent Now
     </button>
 
     <!-- Modal -->
@@ -132,12 +139,14 @@
       <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">you booking details</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+
           <div class="modal-body">
-            ...
+            
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Understood</button>
@@ -145,6 +154,7 @@
         </div>
       </div>
     </div>
+  </div>
 
  
 
