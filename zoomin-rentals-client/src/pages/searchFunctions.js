@@ -83,7 +83,7 @@ $(document).ready(function () {
           carInfo += "<td>" + car.fuel + "</td>";
           carInfo +=
             "<td>" +
-            '<button class="btn btn-primary" id="selectedcar" value=' +
+            '<button id="selectedcar" class="btn btn-primary"  value=' +
             id +
             ">Book Now</button>" +
             "</td>";
@@ -98,9 +98,9 @@ $(document).ready(function () {
   }
 });
 
- $(document).ready(function () {
-	$("#cartable").on("click", "#selectedcar", function () {
-        var id = this.value;
-        alert("ID: " + id);
-	});
+  $(document).ready(function () {
+    $("#cartable").on("click", "#selectedcar", function () {
+      var id = this.value;
+      alert("ID: " + id);
+    });
   });
