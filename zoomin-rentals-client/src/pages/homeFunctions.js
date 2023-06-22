@@ -33,3 +33,22 @@ $(document).ready(function () {
 	  location.href = "searchResult.html";
 	});
   });
+
+
+  $(function() {
+	$('input[name="daterange"]').daterangepicker({
+		format: 'MMDDYYYY',
+		showShortcuts: false,
+	  	opens: 'left',
+		setValue: function(start, end, label) {
+			$('#pickupDate').val(start);
+			$('#returnDate').val(end);
+	  	console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+	},
+  });
+})
+
+var pickupDate = $("#pickupDate").val();
+var returnDate = $("#returnDate").val();
+
+$('input[name="daterange"]').data('daterangepicker').setData(pickupDate, returnDate);

@@ -44,9 +44,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css">
 
 
-    <!-- date picker -->
-    <!-- <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
-    <script src="assets/plugins/global/plugins.bundle.js"></script>    -->
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     
     <title>Zoomie Car Rental</title>
 </head>
@@ -94,18 +96,19 @@
       <!-- Search bar -->
       <section class="search-bar">
         <div id="search" class="container">
-          <form action="searchResult.html" method="post" novalidate="novalidate">
+          <form action="searchResult.html" method="post" novalidate="novalidate" >
               <div class="row">
                   <div class="col-lg-12">
                       <div class="row">
-                          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                              <label for="pickupDate" class="form-label">Pick-up Date</label>
-                              <input id="pickupDate" name="date" type="date" min="2010-08-14" max="2014-08-14" value="" class="form-control search-slt" placeholder="Pickup Date">
+                          <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+                              <label for="pickupDate" class="form-label">Pickup Date - Return Date</label>
+                              <!-- <input id="pickupDate" name="date" type="date" min="2010-08-14" max="2014-08-14" value="" class="form-control search-slt" placeholder="Pickup Date"> -->
+                              <input class="form-control search-slt" type="text" name="daterange" value="06/21/2023 - 12/30/2030" />
                           </div>
-                          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                          <!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                               <label for="returnDate" class="form-label">Return Date</label>
                               <input id="returnDate" name="date" type="date" min="2010-08-14" max="2014-08-14" value="" class="form-control search-slt" placeholder="Return Date">
-                          </div>
+                          </div> -->
                           <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <label for="returnDate" class="form-label">Seats</label>
                               <select class="form-control search-slt" id="seatoptions" aria-label="Default select example">
