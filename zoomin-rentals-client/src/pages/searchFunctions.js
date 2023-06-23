@@ -57,7 +57,7 @@ $(document).ready(function () {
             carInfo += "<td>" + car.fuel + "</td>";
             carInfo +=
               "<td>" +
-              '<button class="btn btn-primary" id="selectstu" value=' +
+              '<button class="btn btn-primary" id="selectedcar" value=' +
               id +
               ">Book Now</button>" +
               "</td>";
@@ -87,9 +87,9 @@ $(document).ready(function () {
           carInfo += "<td>" + car.fuel + "</td>";
           carInfo +=
             "<td>" +
-            '<button id="selectedcar" class="btn btn-primary"  value=' +
+            '<button type="button" id="selectedcar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" value=' +
             id +
-            ">Book Now</button>" +
+            ">Rent Now</button>" +
             "</td>";
           carInfo += "</tr>";
           selected.append(carInfo);
@@ -100,36 +100,94 @@ $(document).ready(function () {
       },
     });
   }
-
-  var myModal = document.getElementById('myModal')
-  var myInput = document.getElementById('myInput')
-  
-  
-  myModal.addEventListener('shown.bs.modal', function () {
-    myInput.focus();
-
-    var id = 
-    var pickupDate = localStorage.getItem("pdate");
-    var returnDate = localStorage.getItem("rdate");
-
-    $.ajax({
-      type: 'GET',
-      url: "http://localhost:9999/cars/" + id,
-
-    })
+});
 
 
+  $(document).ready(function() {
+    $("#cartable").on("click", "#selectedcar", function () {
+      var id = this.value;
+      var carDetailsDiv = $(".modal-body div#carDetails");
+     
+      var myModal = document.getElementById("myModal");
+      var myInput = document.getElementById("myInput");
+ 
+      var pickupDate = localStorage.getItem("pdate");
+      var returnDate = localStorage.getItem("rdate");
 
 
+      $.ajax({
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        url: "http://localhost:9999/cars/" + id,
+        success: function(car) {
 
-  })
+          console.log(car);
+          
+
+          var carInfo = '<p>'
+
+          carInfo += '<b>Car Brand:  </b>' + car.brand + '<br>';
+          carInfo += '<b>Car Model:</b>  ' + car.model + '<br>';
+          carInfo += '<b>Car Seats:</b>  ' + car.seats + '<br>';
+          carInfo += '<b>Car Rego:</b>  ' + car.name + '<br>';
+          carInfo += '<b>Price: </b>    $' + ' &nbsp;' + car.price + '<br>';
+          carInfo += '<b>PickupDat:</b>  ' + pickupDate + '<br>';
+          carInfo += '<b>ReturnDate:</b>  ' + returnDate + '<br>';
+          carInfo += '</p><hr>';
+          carInfo += '<button type="button" class="btn btn-primary" id="booking" value=' +
+          id +
+          ">confirm and Book</button><hr>";
+          
+          carDetailsDiv.append(carInfo);
+          
+          $("#myModal").modal("show");
+          
+        }, 
+        error: function() {
+          alert("Something went wrong, please go to Home page to re-start! ")
+        }
+      });
+    });
+  });
+
+  // $(document).ready(function () {
+  //   $("#cartable").on("click", "#selectedcar", function () {
+  //     var id = this.value;
+  //     alert("ID: " + id);
+  //   });
+  // });
 
 
+  $(document).ready(function () {
+    $(".modal-footer").on("click", "#booking", function () {
+        var carid = this.value;
+        var custid = localStorage.getItem("loggedin");
+        var pickupDate = localStorage.getItem("pdate");
+        var returnDate = localStorage.getItem("rdate");
+
+        $.ajax({
+          type: 'POST',
+          contentType: "application/json; charset=utf-8",
+          url: 'http://localhost:9999/bookings',
+          dataType: "json",
+          data: JSON.stringify({'carid': carid, 'custid': custid, 'pickupDate': pickupDate, 'returnDate': returnDate}),
+          success: function(booking) {
+              alert("Booking added succesfully!");
+
+          },
+          error: function() {
+              alert("Booking added faile, please try again!");
+          }
+    });
+
+  });
 });
 
   $(document).ready(function () {
-    $("#cartable").on("click", "#selectedcar", function () {
-      var id = this.value;
-      alert("ID: " + id);
+    $("#logbtn").on("click", function () {
+      if($("#logbtn").html() == "Logout"){
+          localStorage.clear();
+          location.href = "login.html";
+        }
     });
   });

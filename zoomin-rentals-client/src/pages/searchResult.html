@@ -26,7 +26,7 @@
      <link href="home-style.css" rel="stylesheet">
  
      <!-- jax  -->
-     <script src="homeFunctions.js"></script>
+     <script src="searchFunctions.js"></script>
 
      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
@@ -117,7 +117,7 @@
                 
               </tbody>
             </table>
-            <button name="back" class="btn btn-primary" onclick="history.back()">Back</button>
+            <button name="back" id="backbtn" class="btn btn-primary" onclick="history.back()">Back</button>
     </div>
     </div>
     <div class="col-md-4"></div>
@@ -126,9 +126,9 @@
     <!-- press the rent button  -->
     <!-- Button trigger modal -->
     <div class="container">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <!-- <button type="button" id="selectedcar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Rent Now
-      </button>
+      </button> -->
   
       <!-- Modal -->
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -140,12 +140,23 @@
             </div>
   
             <div class="modal-body">
-              
-            </div>
+              <div class="col-md-6"></div>
+    
+                <div class="col-md-6">
+                <div class="container">
+                        <div id="carDetails"></div>
+                       
+                </div>
+                </div>
+                
+                <div class="col-md-6"></div>
+                <hr>
+                <p><i>Please close and go to homepage to rebook if any details is wrong.</i></p>
+              </div>
   
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Understood</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+              <!-- <button type="button" class="btn btn-primary" id="booking">confirm and Book</button> -->
             </div>
           </div>
         </div>
