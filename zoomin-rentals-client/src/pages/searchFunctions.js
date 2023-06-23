@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    if(localStorage.getItem("loggedin") === null){
+		alert("Login to book today");
+	} else {
+		var id = localStorage.getItem("loggedin");
+		$.ajax({
+			url: "http://localhost:9999/customers/" + id,
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json",
+			success: function (data) {
+			 $("a#profilebtn").html(data.name);
+			 $("a#logbtn").html("Logout");
+			},
+			error: function () {
+
+			},
+		  });
+	}
+  });
+
+$(document).ready(function () {
   var seats = localStorage.getItem("seatcount");
   var pdate = localStorage.getItem("pdate");
   var rdate = localStorage.getItem("rdate");
@@ -190,4 +211,13 @@ $(document).ready(function () {
           location.href = "login.html";
         }
     });
+});
+
+$(document).ready(function () {
+	$("#logbtn").on("click", function () {
+	  if($("#logbtn").html() == "Logout"){
+        localStorage.clear();
+        location.href = "login.html";
+      }
+	});
   });
