@@ -10,7 +10,7 @@ $(document).ready(function () {
 			contentType: "application/json",
 			success: function (data) {
 			 $("a#profilebtn").html(data.name);
-			 $("a#logbtn").hide();
+			 $("a#logbtn").html("Logout");
 			},
 			error: function () {
 
@@ -125,3 +125,12 @@ $(document).ready(function () {
       alert("ID: " + id);
     });
 });
+
+$(document).ready(function () {
+	$("#logbtn").on("click", function () {
+	  if($("#logbtn").html() == "Logout"){
+        localStorage.clear();
+        location.href = "login.html";
+      }
+	});
+  });
