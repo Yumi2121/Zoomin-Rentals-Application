@@ -53,7 +53,7 @@ $(document).ready(function () {
             carInfo += "<td>" + car.fuel + "</td>";
             carInfo +=
               "<td>" +
-              '<button class="btn btn-primary" id="selectstu" value=' +
+              '<button class="btn btn-primary" id="selectedcar" value=' +
               id +
               ">Book Now</button>" +
               "</td>";
@@ -103,4 +103,4 @@ $(document).ready(function () {
       var id = this.value;
       alert("ID: " + id);
     });
-  });
+});
