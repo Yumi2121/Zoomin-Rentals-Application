@@ -1,4 +1,4 @@
-
+//get user by id in local storage 
 $(document).ready(function() {
 	$('input[name="daterange"]').daterangepicker({
 		format: 'YYYY-MM-DD',
@@ -14,7 +14,8 @@ $(document).ready(function() {
 	},
   });
 
-  $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+	alert();
 	console.log(picker.startDate.format('YYYY-MM-DD'));
 	console.log(picker.endDate.format('YYYY-MM-DD'));
 
