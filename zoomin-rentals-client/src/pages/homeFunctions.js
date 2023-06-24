@@ -1,18 +1,18 @@
-
+//get user by id in local storage 
 $(document).ready(function() {
-// 	$('input[name="daterange"]').daterangepicker({
-// 		format: 'YYYY-MM-DD',
-// 		// startDate: moment(),
-// 		// endDate: moment(),
-// 		showShortcuts: false,
-// 	  	opens: 'left',
-// 		function(startDate, endDate) {
-// 			console.log("Callback has been called!");
-// 			$('#search-slt input').html(start.format('YYYY-MM-DD') + ' - ' +  end.format('YYYY-MM-DD'));
-// 			var startDate = start;
-// 			var endDate = end;
-// 	},
-//   });
+	$('input[name="datefilter"]').daterangepicker({
+		format: 'YYYY-MM-DD',
+		startDate: moment(),
+		endDate: moment(),
+		showShortcuts: false,
+	  	opens: 'left',
+		function(startDate, endDate) {
+			console.log("Callback has been called!");
+			$('#search-slt input').html(start.format('YYYY-MM-DD') + ' - ' +  end.format('YYYY-MM-DD'));
+			var startDate = start;
+			var endDate = end;
+	},
+  });
 
   $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
 	console.log(picker.startDate.format('YYYY-MM-DD'));
@@ -25,10 +25,9 @@ $(document).ready(function() {
   });
 });
 
-// var pickupDate = $("#pickupDate").val();
-// var returnDate = $("#returnDate").val();
 
-// $('input[name="daterange"]').data('daterangepicker').setData(pickupDate, returnDate);
+var pickupDate = $("#pickupDate").val();
+var returnDate = $("#returnDate").val();
 
 
 $(document).ready(function () {
