@@ -51,7 +51,7 @@ function validateSignupForm() {
 }
 
 $(document).ready(function () {
-	$("input#signup").click(function () {
+$("input#signup").click(function () {
   var id = localStorage.getItem("selectedId");
   var customer = {
 	name: $("#name").val(),
@@ -62,16 +62,31 @@ $(document).ready(function () {
   };
 
   $.ajax({
-	url: "http://localhost:9999/customers",
-	type: "POST",
+	url: "http://localhost:9999/customers/anchor/" + email,
+	type: "GET",
 	dataType: "json",
 	contentType: "application/json",
 	success: function (data) {
-	  alert("Customer Successfully Registered!");
+		alert("Account already exists with email: " + email);
 	},
-	data: JSON.stringify(customer),
-  });
-});
+	error: function () {
+		var created = false;
+		}
+		});
+
+		if(!created){
+			$.ajax({
+				url: "http://localhost:9999/customers",
+				type: "POST",
+				dataType: "json",
+				contentType: "application/json",
+				success: function (data) {
+				  alert("Customer Successfully Registered!");
+				},
+				data: JSON.stringify(customer),
+			  });
+		}
+	});
 });
 
 $(document).ready(function () {
@@ -94,4 +109,4 @@ $(document).ready(function () {
 		},
 	  });
 	});
-  });
+  })
