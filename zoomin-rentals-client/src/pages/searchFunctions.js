@@ -178,12 +178,13 @@ $(document).ready(function () {
 
 
   $(document).ready(function () {
-    $("#booking").on("click", "#booking", function () {
+    $("div#carDetails").on("click", "#booking", function () {
         var carid = this.value;
         var custid = localStorage.getItem("loggedin");
-        var pickupDate = localStorage.getItem("pdate");
-        var returnDate = localStorage.getItem("rdate");
-        console.log(carid, custid, pickupDate, returnDate);
+        var pickupDate = new Date(localStorage.getItem("pdate"));
+        var returnDate = new Date(localStorage.getItem("rdate"));
+
+        alert(carid, custid, pickupDate, returnDate);
 
         $.ajax({
           type: 'POST',
