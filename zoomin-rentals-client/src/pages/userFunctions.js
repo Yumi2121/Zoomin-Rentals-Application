@@ -1,7 +1,7 @@
 //get user by id in local storage 
 $(document).ready(function () {
     if(localStorage.getItem("loggedin") === null){
-		alert("Login to book today");
+        
 	} else {
 		var id = localStorage.getItem("loggedin");
 		$.ajax({

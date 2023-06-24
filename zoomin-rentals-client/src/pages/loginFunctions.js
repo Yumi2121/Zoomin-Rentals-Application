@@ -1,6 +1,5 @@
 $(document).ready(function () {
     if(localStorage.getItem("loggedin") === null){
-		alert("Login to book today");
 		$("a#profilebtn").hide();
 	} else {
 		var id = localStorage.getItem("loggedin");
