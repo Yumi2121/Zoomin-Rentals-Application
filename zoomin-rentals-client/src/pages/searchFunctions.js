@@ -193,7 +193,7 @@ $(document).ready(function () {
           dataType: "json",
           data: JSON.stringify({'carid': carid, 'custid': custid, 'pickupDate': pickupDate, 'returnDate': returnDate}),
           success: function(booking) {
-              alert("Booking added succesfully!");
+              alert("Booking added succesfully! Please go to user Profile check your bookings.");
 
           },
           error: function() {
