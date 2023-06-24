@@ -143,8 +143,6 @@ $(document).ready(function () {
         success: function(car) {
 
           console.log(car);
-          
-
           var carInfo = '<p>'
 
           carInfo += '<b>Car Brand:  </b>' + car.brand + '<br>';
@@ -180,7 +178,7 @@ $(document).ready(function () {
 
 
   $(document).ready(function () {
-    $(".modal-footer").on("click", "#booking", function () {
+    $("#booking").on("click", "#booking", function () {
         var carid = this.value;
         var custid = localStorage.getItem("loggedin");
         var pickupDate = localStorage.getItem("pdate");
