@@ -181,20 +181,19 @@ $(document).ready(function () {
     $("div#carDetails").on("click", "#booking", function () {
         var carid = this.value;
         var custid = localStorage.getItem("loggedin");
-        var pickupDate = new Date(localStorage.getItem("pdate"));
-        var returnDate = new Date(localStorage.getItem("rdate"));
-
-        alert(carid, custid, pickupDate, returnDate);
+        var pickupDate = localStorage.getItem("pdate");
+        var returnDate = localStorage.getItem("rdate");
+        var testData = JSON.stringify({'carid': carid, 'custid': custid, 'pickupdate': pickupDate, 'returndate': returnDate});
 
         $.ajax({
           type: 'POST',
           contentType: "application/json; charset=utf-8",
           url: 'http://localhost:9999/bookings',
           dataType: "json",
-          data: JSON.stringify({'carid': carid, 'custid': custid, 'pickupDate': pickupDate, 'returnDate': returnDate}),
+          data: JSON.stringify({'carid': carid, 'custid': custid, 'pickupdate': pickupDate, 'returndate': returnDate}),
           success: function(booking) {
               alert("Booking added succesfully! Please go to user Profile check your bookings.");
-              // data: JSON.stringify(booking)
+              alert(testData);
           },
           error: function() {
               alert("Booking added faile, please try again!");

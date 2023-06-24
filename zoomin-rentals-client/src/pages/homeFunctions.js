@@ -18,8 +18,8 @@ $(document).ready(function() {
 	console.log(picker.startDate.format('YYYY-MM-DD'));
 	console.log(picker.endDate.format('YYYY-MM-DD'));
 
-	localStorage.setItem("pdate", JSON.stringify(picker.startDate.format('YYYY-MM-DD')));
-	localStorage.setItem("rdate", JSON.stringify(picker.endDate.format('YYYY-MM-DD')));
+	localStorage.setItem("pdate", picker.startDate.format('YYYY-MM-DD'));
+	localStorage.setItem("rdate", picker.endDate.format('YYYY-MM-DD'));
 	// localStorage.setItem("pdate", picker.startDate.format('YYYY-MM-DD'));
 	// localStorage.setItem("rdate", picker.endDate.format('YYYY-MM-DD'));
 	
