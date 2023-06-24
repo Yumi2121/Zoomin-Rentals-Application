@@ -85,7 +85,7 @@ $(document).ready(function () {
 		dataType: "json",
 		contentType: "application/json",
 		success: function (data) {
-
+			console.log(data);
 		  localStorage.setItem("loggedin", data.id);
 		  location.href = "home.html";
 		},
