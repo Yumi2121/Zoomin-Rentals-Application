@@ -43,7 +43,7 @@ $(document).ready(function () {
 			contentType: "application/json",
 			success: function (data) {
 			 $("a#profilebtn").html(data.name);
-			 $("a#logbtn").hide();
+			 $("a#logbtn").html("Logout");
 			},
 			error: function () {
 
@@ -57,12 +57,18 @@ $(document).ready(function () {
 	  var selected = $('#seatoptions').find(":selected").text();
 	//   var pickupDate = $("#pickupDate").val();
 	//   var returnDate = $("#returnDate").val();
-	
-
 	  localStorage.setItem("seatcount", selected);
 	  location.href = "searchResult.html";
 	});
 });
 
+$(document).ready(function () {
+	$("#logbtn").on("click", function () {
+	  if($("#logbtn").html() == "Logout"){
+        localStorage.clear();
+        location.href = "login.html";
+      }
+	});
+  });
 
 

@@ -1,7 +1,7 @@
 //get user by id in local storage 
 $(document).ready(function () {
     if(localStorage.getItem("loggedin") === null){
-		alert("Login to book today");
+        
 	} else {
 		var id = localStorage.getItem("loggedin");
 		$.ajax({
@@ -11,7 +11,7 @@ $(document).ready(function () {
 			contentType: "application/json",
 			success: function (data) {
 			 $("a#profilebtn").html(data.name);
-			 $("a#logbtn").hide();
+			 $("a#logbtn").html("Logout");
 			},
 			error: function () {
 
@@ -64,4 +64,13 @@ $(document).ready(function () {
         data: JSON.stringify(cust),
       });
     });
+  });
+
+  $(document).ready(function () {
+	$("#logbtn").on("click", function () {
+	  if($("#logbtn").html() == "Logout"){
+        localStorage.clear();
+        location.href = "login.html";
+      }
+	});
   });

@@ -1,3 +1,25 @@
+$(document).ready(function () {
+    if(localStorage.getItem("loggedin") === null){
+		$("a#profilebtn").hide();
+	} else {
+		var id = localStorage.getItem("loggedin");
+		$.ajax({
+			url: "http://localhost:9999/customers/" + id,
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json",
+			success: function (data) {
+			 $("a#profilebtn").html(data.name);
+			 $("a#logbtn").html("Logout");
+			 location.href = "home.html";
+			},
+			error: function () {
+
+			},
+		  });
+	}
+  });
+
 $(window).on("hashchange", function () {
 	if (location.hash.slice(1) == "signup") {
 		$(".page").addClass("extend");
@@ -51,28 +73,41 @@ function validateSignupForm() {
 }
 
 $(document).ready(function () {
-	$("input#signup").click(function () {
+$("input#signup").click(function () {
+  var id = localStorage.getItem("selectedId");
+  var customer = {
+	name: $("#name").val(),
+	mobile: $("#mobile").val(),
+	licenseno: $("#licence").val(),
+	email: $("#email").val(),
+	password: $("#signConfirmPassword").val(),
+  };
 
-		alert("start signup");
-		var id = localStorage.getItem("selectedId");
-		var customer = {
-			name: $("#name").val(),
-			mobile: $("#mobile").val(),
-			licenseno: $("#licence").val(),
-			email: $("#email").val(),
-			password: $("#signConfirmPassword").val(),
-		};
+  $.ajax({
+	url: "http://localhost:9999/customers/anchor/" + email,
+	type: "GET",
+	dataType: "json",
+	contentType: "application/json",
+	success: function (data) {
+		alert("Account already exists with email: " + email);
+	},
+	error: function () {
+		var created = false;
+		}
+		});
 
-		$.ajax({
-			url: "http://localhost:9999/customers/",
-			type: "POST",
-			dataType: "json",
-			contentType: "application/json",
-			success: function (data) {
-			alert("Customer Successfully Registered!");
-			},
-			data: JSON.stringify(customer),
-  		});
+		if(!created){
+			$.ajax({
+				url: "http://localhost:9999/customers",
+				type: "POST",
+				dataType: "json",
+				contentType: "application/json",
+				success: function (data) {
+				  alert("Customer Successfully Registered!");
+				},
+				data: JSON.stringify(customer),
+			  });
+		}
 	});
 });
 
@@ -96,4 +131,4 @@ $(document).ready(function () {
 		},
 	  });
 	});
-  });
+  })

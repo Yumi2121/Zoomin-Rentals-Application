@@ -183,6 +183,7 @@ $(document).ready(function () {
         var custid = localStorage.getItem("loggedin");
         var pickupDate = localStorage.getItem("pdate");
         var returnDate = localStorage.getItem("rdate");
+        console.log(carid, custid, pickupDate, returnDate);
 
         $.ajax({
           type: 'POST',
@@ -192,7 +193,7 @@ $(document).ready(function () {
           data: JSON.stringify({'carid': carid, 'custid': custid, 'pickupDate': pickupDate, 'returnDate': returnDate}),
           success: function(booking) {
               alert("Booking added succesfully! Please go to user Profile check your bookings.");
-
+              // data: JSON.stringify(booking)
           },
           error: function() {
               alert("Booking added faile, please try again!");
