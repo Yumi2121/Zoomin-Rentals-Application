@@ -21,8 +21,8 @@ function validateLoginForm() {
 		return false;
 	}
 
-	else if (password.length < 5) {
-		document.getElementById("errorMsg").innerHTML = "Your password must include atleast 5 characters"
+	else if (password.length < 8) {
+		document.getElementById("errorMsg").innerHTML = "Your password must include atleast 8 characters"
 		return false;
 	}
 	else {
@@ -62,7 +62,7 @@ $(document).ready(function () {
   };
 
   $.ajax({
-	url: "http://localhost:9999/customers/",
+	url: "http://localhost:9999/customers",
 	type: "POST",
 	dataType: "json",
 	contentType: "application/json",

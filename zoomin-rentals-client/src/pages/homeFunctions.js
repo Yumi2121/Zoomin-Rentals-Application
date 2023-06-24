@@ -1,4 +1,4 @@
-//get user by id in local storage 
+
 $(document).ready(function() {
 	$('input[name="daterange"]').daterangepicker({
 		format: 'YYYY-MM-DD',
