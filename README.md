@@ -78,7 +78,13 @@ Note: This user manual provides a general overview of the car rental website's f
 
 #### Sceenshot for website:
 
+- ##### Log-in and Sign up page
 
+![login-page](docs/login-page.png)
+
+
+
+- ##### Home page
 
 ![home-page](docs/home-page.png)
 
@@ -88,13 +94,23 @@ Note: This user manual provides a general overview of the car rental website's f
 
 
 
+- ##### Home page with date range picker
+
 ![dateRangePicker](docs/dateRangePicker.png)
 
 
 
+
+
+- ##### Search-result page
+
 ![search-result-page](docs/search-result-page.png)
 
 
+
+
+
+- ##### Confirm booking page in Modal 
 
 ![booking](docs/booking.png)
 
